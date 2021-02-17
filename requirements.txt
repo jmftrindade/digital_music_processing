@@ -1,0 +1,7 @@
+hmmlearn
+ipywidgets
+jedi==0.17.2
+jupyter
+matplotlib
+requests
+scipy
