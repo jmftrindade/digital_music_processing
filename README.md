@@ -30,6 +30,7 @@ $ source /path/to/your/venv/bin/activate
 
 ```
 $ pip3 install --no-cache-dir -r requirements.txt
+$ jupyter nbextension enable --py widgetsnbextension
 ```
 
 ### Setup Jupyter kernel
@@ -57,7 +58,7 @@ To start out a local jupyter instance, you can run the command below from this
 directory:
 
 ```
-$ jupyter notebook
+$ jupyter notebook <notebook_file.ipynb>
 ```
 
 And then open your browser at `http://localhost:8888` to access it. Click on any of the .ipynb files to open a notebook.
