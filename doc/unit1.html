@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>unit1.py &mdash; 21M.387 Library  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="21M.387 fmplib Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 21M.387 Library
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">unit1.py</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">21M.387 Library</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>unit1.py</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/unit1.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-fmplib.unit1">
+<span id="unit1-py"></span><h1>unit1.py<a class="headerlink" href="#module-fmplib.unit1" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt id="fmplib.unit1.make_additive_tone">
+<code class="sig-prename descclassname">fmplib.unit1.</code><code class="sig-name descname">make_additive_tone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">amps</span></em>, <em class="sig-param"><span class="n">freqs</span></em>, <em class="sig-param"><span class="n">dur</span></em>, <em class="sig-param"><span class="n">fs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmplib.unit1.make_additive_tone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a complex tone by using additive synthesis, that is, summing a set of sine tones
+with fixed frequencies and amplitudes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amps</strong> – array of amplitudes applied to each sinusoid</p></li>
+<li><p><strong>freqs</strong> – array of frequencies (in Hertz) for each sinusoid</p></li>
+<li><p><strong>dur</strong> – duration in seconds of generated tone</p></li>
+<li><p><strong>fs</strong> – audio sampling rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmplib.unit1.make_envelope">
+<code class="sig-prename descclassname">fmplib.unit1.</code><code class="sig-name descname">make_envelope</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db1</span></em>, <em class="sig-param"><span class="n">db2</span></em>, <em class="sig-param"><span class="n">L</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmplib.unit1.make_envelope" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a volume envelope curve that is linear in decibels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db1</strong> – initial value in decibels</p></li>
+<li><p><strong>db2</strong> – final value in decibels</p></li>
+<li><p><strong>L</strong> – length (in samples) of signal</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmplib.unit1.make_sine_tone">
+<code class="sig-prename descclassname">fmplib.unit1.</code><code class="sig-name descname">make_sine_tone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">amp</span></em>, <em class="sig-param"><span class="n">freq</span></em>, <em class="sig-param"><span class="n">dur</span></em>, <em class="sig-param"><span class="n">fs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmplib.unit1.make_sine_tone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a pure sine tone of a fixed frequency and length.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amp</strong> – amplitude, typically &gt; 0</p></li>
+<li><p><strong>freq</strong> – frequency in Hertz</p></li>
+<li><p><strong>dur</strong> – duration in seconds</p></li>
+<li><p><strong>fs</strong> – audio sampling rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmplib.unit1.make_tone_series">
+<code class="sig-prename descclassname">fmplib.unit1.</code><code class="sig-name descname">make_tone_series</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">amp</span></em>, <em class="sig-param"><span class="n">freqs</span></em>, <em class="sig-param"><span class="n">dur</span></em>, <em class="sig-param"><span class="n">fs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmplib.unit1.make_tone_series" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a series of pure sine tone, each of a fixed length, concatenated together.
+Also adds a bit of fade-in / fade-out to avoid pops between tones.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>amp</strong> – array of amplitudes, one per tone, or scalar value for all tones.</p></li>
+<li><p><strong>freqs</strong> – array of frequencies in Hertz</p></li>
+<li><p><strong>dur</strong> – duration in seconds of each tone</p></li>
+<li><p><strong>fs</strong> – audio sampling rate</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="fmplib.unit1.pitch_to_freq">
+<code class="sig-prename descclassname">fmplib.unit1.</code><code class="sig-name descname">pitch_to_freq</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="headerlink" href="#fmplib.unit1.pitch_to_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates equal-tempered frequency of given MIDI pitch, assuming MIDI 69 produces 440Hz.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>p</strong> – MIDI pitch value (can be float)</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>frequency (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="21M.387 fmplib Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Eran Egozy
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
