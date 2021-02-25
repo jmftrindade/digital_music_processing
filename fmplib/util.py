@@ -17,23 +17,19 @@ from ipywidgets import IntSlider, FloatSlider
 
 ######### Wave Files ##########
 
-def load_wav(filepath, t_start = 0, t_end = sys.maxsize, only_22k = True) :
-    """Load a wave file, which must be 22050Hz and 16bit and must be either
-    mono or stereo. 
-    Inputs:
-        filepath: audio file
-        t_start, t_end:  (optional) subrange of file to load (in seconds)
-        only_22k: if True (default), assert if sample rate is different from 22050.
-    Returns:
-        a numpy floating-point array with a range of [-1, 1]
+def load_wav(filepath, t_start = 0, t_end = sys.maxsize) :
+    """Load a wave file, which must be 16bit and must be either mono or stereo. 
+    :param filepath: audio file
+    :param t_start: start time when loading a portion of the file (in seconds)
+    :param t_end: end time when loading a portion of the file (in seconds)
+    :return: a numpy floating-point array with a range of [-1, 1]
     """
     
     wf = wave.open(filepath)
     num_channels, sampwidth, fs, end, comptype, compname = wf.getparams()
     
-    # for now, we will only accept 16 bit files at 22k
+    # for now, we will only accept 16 bit files
     assert(sampwidth == 2)
-    # assert(fs == 22050)
 
     # start frame, end frame, and duration in frames
     f_start = int(t_start * fs)
