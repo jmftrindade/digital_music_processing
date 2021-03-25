@@ -16,6 +16,8 @@
 
     unit3.rst
 
+    unit4.rst
+
 
 Indices and tables
 ==================
