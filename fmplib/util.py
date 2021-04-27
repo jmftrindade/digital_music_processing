@@ -5,6 +5,13 @@ import sys
 import os
 import webbrowser
 
+# check that python version is correct:
+REQ_VER = (3,9)
+if sys.version_info[:2] != REQ_VER:
+    cur = f'{sys.version_info[0]}.{sys.version_info[1]}'
+    req = f'{REQ_VER[0]}.{REQ_VER[1]}'
+    raise Exception(f"You must run python version {req}, but you are running {cur}.")
+
 import numpy as np
 
 from matplotlib import pyplot as plt
@@ -43,7 +50,7 @@ def load_wav(filepath, t_start = 0, t_end = sys.maxsize) :
     samples = np.fromstring(raw_bytes, dtype = np.int16)
 
     # convert from integer type to floating point, and scale to [-1, 1]
-    samples = samples.astype(np.float)
+    samples = samples.astype(float)
     samples *= (1 / 32768.0)
 
     if num_channels == 1:
@@ -71,7 +78,7 @@ def save_wav(channels, fs, filepath) :
         channels = [channels]
 
     length = min ([len(c) for c in channels])
-    data = np.empty(length*num_channels, np.float)
+    data = np.empty(length*num_channels, float)
 
     # interleave channels:
     for n in range(num_channels):
@@ -168,7 +175,7 @@ def load_chord_annotations(filepath, ff) :
 
     # final value of chords gives us the proper length:
     num_steps = chords[-1][0]
-    out = np.empty(num_steps, dtype = np.int)
+    out = np.empty(num_steps, dtype = int)
     s_beg = 0
     for s_end, n in chords:
         out[s_beg:s_end] = n
@@ -228,8 +235,8 @@ def plot_fft_and_listen(filepath, raw_axis = False) :
     x = load_wav(filepath)
     x_ft = np.abs(np.fft.fft(x))
 
-    time = np.arange(len(x),dtype=np.float) / fs
-    freq = np.arange(len(x_ft), dtype=np.float) / len(x_ft) * fs
+    time = np.arange(len(x),dtype=float) / fs
+    freq = np.arange(len(x_ft), dtype=float) / len(x_ft) * fs
 
     if raw_axis:
         print('sample rate:', fs)

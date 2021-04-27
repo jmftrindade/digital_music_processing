@@ -19,7 +19,8 @@ plat_path = 'platforms'
 
 plat_table = (
     ('windows', ('windows', 'cygwin-*')),
-    ('darwin', ('darwin', 'ios')),
+    ('darwin', ('darwin',)),
+    ('ios', ('ios',)),
     ('linux', ('linux*',)),
     ('freebsd', ('freebsd*', 'openbsd*')),
     ('poky', ('poky',)),
@@ -173,6 +174,15 @@ def assert_armored(*names):
             return func(*args, **kwargs)
         return wrap_execute
     return wrapper
+
+
+def check_armored(*names):
+    try:
+        prototype = PYFUNCTYPE(py_object, py_object)
+        prototype(('assert_armored', _pytransform))(names)
+        return True
+    except RuntimeError:
+        return False
 
 
 def get_license_info():
